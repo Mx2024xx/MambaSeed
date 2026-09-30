@@ -5,9 +5,10 @@ recognition. It introduces a Local Continuous Branch Injection (LCBI)
 mechanism to preserve fine-grained lesion edges and textures while maintaining
 efficient global dependency modeling.
 
-> **Repository status:** The manuscript is currently under review. The complete
-> source code will be released in this repository after the paper is accepted
-> and before publication.
+> **Repository status:** This repository contains a selected research snapshot:
+> the model implementation, tomato training and evaluation scripts, a model
+> complexity analysis script, a tomato dataset archive, and three trained
+> checkpoints. Manuscript and publication details will be updated when finalized.
 
 ## Overview
 
@@ -48,23 +49,46 @@ combines state-space global modeling with a depthwise-separable local
 convolution branch. The final stage uses an LCBI-Attention block to integrate
 global semantic information and local visual details.
 
-## Code Availability
+## Repository Contents
 
-The current public snapshot contains the paper overview and model architecture
-figure only. It does not contain source code, trained weights, datasets,
-training scripts, or experiment outputs.
+- `model/mambaseed.py`: MambaSeed model implementation.
+- `training/train_MambaSeed_224_tomato.py`: tomato training script.
+- `testing/test_MambaSeed_224_tomato.py`: tomato evaluation script.
+- `analysis/analyze_MambaSeed_224.py`: parameter-count and computational
+  complexity analysis script.
+- `dataset/tomato_dataset.zip`: tomato dataset archive with `train`,
+  `validation`, and `test` splits.
+- `model_weights/best_model_1.pth` through `best_model_3.pth`: three trained
+  checkpoints.
 
-The complete source code required to use the proposed model will be made
-publicly available in this repository after manuscript acceptance and before
-publication. During peer review, code access can be provided to editors and
-reviewers when required for assessment.
+## Running the Scripts
+
+The scripts retain paths from the original research environment. Update the
+dataset, model, output, and logging paths to match your local setup before
+running them. The analysis script also refers to an external `MV1` directory.
+
+The dataset archive is larger than GitHub's regular 100 MiB file limit. To
+distribute it through GitHub, use Git LFS or attach it to a GitHub Release; see
+[GitHub's large-file guidance](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github).
 
 ## Citation
 
 The final bibliographic record and DOI will be added after publication.
 
-## Content License
+## Licenses and Third-Party Notices
 
-The repository description and architecture figure are available under the
-Creative Commons Attribution 4.0 International license. A separate software
-license will be added when the source code is released.
+The root `LICENSE` applies to the repository description and architecture
+figure only. It does not grant rights to the model source code, dataset, or
+trained checkpoints.
+
+`model/mambaseed.py` is modified from NVIDIA's MambaVision project. The full
+NVIDIA Source Code License-NC is included in
+[`THIRD_PARTY_LICENSES/`](THIRD_PARTY_LICENSES/NVIDIA-MambaVision-Source-Code-License-NC.txt).
+It limits use of the upstream work and derivative works to non-commercial
+research or evaluation. The model code must retain its copyright and
+attribution notices.
+
+The tomato image archive is attributed and licensed separately; see
+[`DATASET_NOTICE.md`](DATASET_NOTICE.md) for its PlantVillage source, citation,
+and CC BY-SA 3.0 terms. The root `LICENSE` does not assign a separate blanket
+license to the trained checkpoints.

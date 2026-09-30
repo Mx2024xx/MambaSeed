@@ -12,5 +12,8 @@ are indicated.
 License details:
 https://creativecommons.org/licenses/by/4.0/
 
-No MambaSeed source code is included in this repository snapshot. A separate
-software license will be provided when the source code is released.
+This repository also contains model source code, a dataset archive, and trained
+checkpoints. This license applies only to the repository description and
+architecture figure; it does not grant rights to the software, dataset, or
+checkpoints. Those materials may be subject to separate third-party notices
+and terms.
