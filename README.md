@@ -8,7 +8,7 @@ efficient global dependency modeling.
 > **Repository status:** This repository contains a selected research snapshot:
 > the model implementation, tomato training and evaluation scripts, a model
 > complexity analysis script, three dataset archives, and trained
-> checkpoints for MambaSeed and its ablation variants. Manuscript and publication details will be updated when finalized.
+> checkpoints for MambaSeed and its ablation variants.
 
 ## Overview
 
@@ -33,10 +33,9 @@ convolution pathway to balance high-level semantics and structural detail.
 
 The design is intended to provide a compact balance among recognition
 accuracy, computational efficiency, high-frequency information retention, and
-robustness under illumination changes, motion blur, and spatial occlusion. The
-manuscript evaluates this design on Tomato, Corn, and Potato leaf disease
-datasets through classification, ablation, frequency-domain, efficiency, and
-controlled-perturbation studies.
+robustness under illumination changes, motion blur, and spatial occlusion. The experiments cover Tomato, Corn, and Potato leaf disease
+datasets, including classification, ablation, frequency-domain, efficiency,
+and controlled-perturbation studies.
 
 ## Model Architecture
 
@@ -88,10 +87,6 @@ python testing/test_MambaSeed_224_pvcorn.py
 
 Each evaluation script loads the latest matching checkpoint from
 `outputs/potato/` or `outputs/pvcorn/` by default.
-
-## Citation
-
-The final bibliographic record and DOI will be added after publication.
 
 ## Licenses and Third-Party Notices
 
