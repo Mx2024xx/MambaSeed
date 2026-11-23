@@ -29,7 +29,5 @@ checkpoints/
 .DS_Store
 .idea/
 .vscode/
-# Explicitly selected MambaSeed tomato checkpoints for release review
-!model_weights/best_model_1.pth
-!model_weights/best_model_2.pth
-!model_weights/best_model_3.pth
+# Selected tomato checkpoints
+!model_weights/*/best_model_[123].pth

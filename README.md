@@ -7,8 +7,8 @@ efficient global dependency modeling.
 
 > **Repository status:** This repository contains a selected research snapshot:
 > the model implementation, tomato training and evaluation scripts, a model
-> complexity analysis script, three dataset archives, and three trained
-> checkpoints. Manuscript and publication details will be updated when finalized.
+> complexity analysis script, three dataset archives, and trained
+> checkpoints for MambaSeed and its ablation variants. Manuscript and publication details will be updated when finalized.
 
 ## Overview
 
@@ -59,8 +59,9 @@ global semantic information and local visual details.
 - Dataset archives: [Tomato](dataset/tomato_dataset.zip), [Potato](dataset/potato_dataset.zip),
   and [PlantVillage Corn](dataset/pvcorn_dataset.zip). Each archive preserves the
   original `train`, `validation`, and `test` splits.
-- `model_weights/best_model_1.pth` through `best_model_3.pth`: three trained
-  checkpoints.
+- `model_weights/`: tomato checkpoints grouped into `mambaseed`, `baseline`,
+  and `version_1` through `version_10`. Each directory contains
+  `best_model_1.pth`, `best_model_2.pth`, and `best_model_3.pth`.
 
 ## Running the Scripts
 
