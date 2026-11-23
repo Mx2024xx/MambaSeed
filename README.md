@@ -7,7 +7,7 @@ efficient global dependency modeling.
 
 > **Repository status:** This repository contains a selected research snapshot:
 > the model implementation, tomato training and evaluation scripts, a model
-> complexity analysis script, a tomato dataset archive, and three trained
+> complexity analysis script, three dataset archives, and three trained
 > checkpoints. Manuscript and publication details will be updated when finalized.
 
 ## Overview
@@ -56,8 +56,9 @@ global semantic information and local visual details.
 - `testing/test_MambaSeed_224_tomato.py`: tomato evaluation script.
 - `analysis/analyze_MambaSeed_224.py`: parameter-count and computational
   complexity analysis script.
-- `dataset/tomato_dataset.zip`: tomato dataset archive with `train`,
-  `validation`, and `test` splits.
+- Dataset archives: [Tomato](dataset/tomato_dataset.zip), [Potato](dataset/potato_dataset.zip),
+  and [PlantVillage Corn](dataset/pvcorn_dataset.zip). Each archive preserves the
+  original `train`, `validation`, and `test` splits.
 - `model_weights/best_model_1.pth` through `best_model_3.pth`: three trained
   checkpoints.
 
@@ -67,9 +68,8 @@ The scripts retain paths from the original research environment. Update the
 dataset, model, output, and logging paths to match your local setup before
 running them. The analysis script also refers to an external `MV1` directory.
 
-The dataset archive is larger than GitHub's regular 100 MiB file limit. To
-distribute it through GitHub, use Git LFS or attach it to a GitHub Release; see
-[GitHub's large-file guidance](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github).
+The dataset archives are stored with Git LFS. After cloning the repository,
+run `git lfs pull` to download them, then extract the ZIP files.
 
 ## Citation
 
