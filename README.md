@@ -72,6 +72,23 @@ running them. The analysis script also refers to an external `MV1` directory.
 The dataset archives are stored with Git LFS. After cloning the repository,
 run `git lfs pull` to download them, then extract the ZIP files.
 
+### Potato and PlantVillage Corn
+
+After downloading the archives with Git LFS, extract them into `dataset/`
+so the split directories are under `dataset/potato/` and `dataset/pvcorn/`.
+From the repository root, train first and then run the matching evaluation script.
+
+```bash
+python training/train_MambaSeed_224_potato.py
+python testing/test_MambaSeed_224_potato.py
+
+python training/train_MambaSeed_224_pvcorn.py
+python testing/test_MambaSeed_224_pvcorn.py
+```
+
+Each evaluation script loads the latest matching checkpoint from
+`outputs/potato/` or `outputs/pvcorn/` by default.
+
 ## Citation
 
 The final bibliographic record and DOI will be added after publication.
